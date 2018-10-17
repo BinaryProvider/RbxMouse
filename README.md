@@ -58,13 +58,16 @@ Mouse.Button.Middle
 ### Properties
 This `Mouse` object has a lot of similar properties.
 
-#### *Vector2* Mouse.Position
+#### *Vector2* RbxMouse.Position
 The 2D position of the mouse.
 
-#### *CFrame* Mouse.CFrame
+#### *CFrame* RbxMouse.CFrame
 The 3D position and direction of the mouse.
 
-#### *BasePart/nil* Mouse.Target
+#### *Vector3* RbxMouse.Normal
+The surface normal at the point of intersection.
+
+#### *BasePart/nil* RbxMouse.Target
 The BasePart the mouse is hovering over. Will throw an exception if target is disabled in configuration.
 
 ### Signals
@@ -72,16 +75,16 @@ The BasePart the mouse is hovering over. Will throw an exception if target is di
 Fires every time the mouse is moved. The position of the mouse is passed to the callback function.
 
 ### Methods
-#### *void* Mouse:Hide ( )
+#### *void* RbxMouse:Hide ( )
 Hides the mouse icon. Only needs to be called once.
 
-#### *void* Mouse:Show ( )
+#### *void* RbxMouse:Show ( )
 Shows the mouse icon. Only needs to be called once.
 
-#### *void* Mouse:Disable ( )
+#### *void* RbxMouse:Disable ( )
 Disconnects all input listeners without removing your connections. Useful if you want to put the Mouse's properties into a static state, or if you want to stop listening for Mouse input.
 
-#### *void* Mouse:Enable ( )
+#### *void* RbxMouse:Enable ( )
 Reconnects all input listeners.
 
 ## RbxMouseButton
