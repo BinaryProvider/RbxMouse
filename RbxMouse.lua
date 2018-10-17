@@ -26,12 +26,14 @@ local properties = {} do
 
     properties.Position = Vector2.new()
     properties.CFrame = CFrame.new()
+	properties.Normal = Vector3.new()
 
 	if not CONFIG.ConstantlyUpdatingProperties then
 	    Input.bindActionChange(UIT_MOUSE_MOVEMENT, function(inputObject)
 	        properties.Position = Vector2.new(inputObject.Position.X, inputObject.Position.Y)
 	        MouseRay.new(properties.Position, children.TargetFilter:Get())
 	        properties.CFrame = MouseRay.getCFrame()
+			properties.Normal = MouseRay.getNormal()
 	    end)
 	else
 		Input.bindToFrame(function(UserInputService)
@@ -39,11 +41,13 @@ local properties = {} do
 			properties.Position = mousePosition
 	        MouseRay.new(mousePosition, children.TargetFilter:Get())
 	        properties.CFrame = MouseRay.getCFrame()
+			properties.Normal = MouseRay.getNormal()
 		end)
 	end
 
     if CONFIG.TargetEnabled then
         properties.Target = nil
+		
 		local updateTarget = function()
 	    	properties.Target = MouseRay.getTarget()
 	    end
